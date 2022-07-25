@@ -2,7 +2,7 @@ import compare from './app';
 
 /* eslint-disable guard-for-in */
 
-const orderByProps = (object, arr) => {
+const sortingByProps = (object, arr) => {
   const newArr = [];
   const dirArr = [];
 
@@ -18,5 +18,5 @@ const orderByProps = (object, arr) => {
   return result;
 };
 
-export default orderByProps;
+export default sortingByProps;
 // console.log(orderByProps(obj, ['name', 'level']));
