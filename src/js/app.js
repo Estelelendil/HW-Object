@@ -15,8 +15,8 @@
 //     // return result;
 // }
 function compare(a, b) {
-    if(a.key.firstname < b.key.firstname) { return -1; };
-    if(a.key.firstname > b.key.firstname) { return 1; };
-    return 0;
-};
+  if (a.key[0] < b.key[0]) { return -1; }
+  if (a.key[0] > b.key[0]) { return 1; }
+  return 0;
+}
 export default compare;

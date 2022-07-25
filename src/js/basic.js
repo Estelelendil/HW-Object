@@ -1,18 +1,22 @@
+import compare from './app';
+
 /* eslint-disable guard-for-in */
-const obj = {
-  name: 'мечник', health: 10, level: 2, attack: 80, defence: 40,
-};
 
 const orderByProps = (object, arr) => {
   const newArr = [];
-  for (const prop in object) {
-    arr.forEach((elem) => {
-      if (elem === prop) {
-        newArr.push({ key: object.prop });
-      }
-    });
-  }
+  const dirArr = [];
 
-  return newArr;
+  for (const prop in object) {
+    if (arr.includes(prop)) {
+      newArr.push({ key: prop, value: object[prop] });
+    } else {
+      dirArr.push({ key: prop, value: object[prop] });
+    }
+  }
+  const result = newArr.concat(dirArr.sort(compare));
+
+  return result;
 };
-console.log(orderByProps(obj, ['name', 'level']));
+
+export default orderByProps;
+// console.log(orderByProps(obj, ['name', 'level']));
